@@ -148,7 +148,7 @@
 // setTimeout(() => console.log("this is setTimeout 2"), 500);
 // setTimeout(() => console.log("this is setTimeout 3"), 0);
 
-const fs = require("fs");
+// const fs = require("fs");
 
 // fs.readFile(__filename, () => {
 //     console.log("this is readFile 1");
@@ -157,14 +157,25 @@ const fs = require("fs");
 // process.nextTick(() => console.log("this is process.nextTick 1"));
 // Promise.resolve().then(() => console.log("this is Promise.resolve 1"));
 
-fs.readFile(__filename, () => {
-    console.log("this is readFile 1");
-    setImmediate(() => console.log("this is setImmediate inside readFile"));
+// fs.readFile(__filename, () => {
+//     console.log("this is readFile 1");
+//     setImmediate(() => console.log("this is setImmediate inside readFile"));
+// });
+
+// process.nextTick(() => console.log("this is process.nextTick 1"));
+// Promise.resolve().then(() => console.log("this is Promise.resolve 1"));
+// setTimeout(() => console.log("this is setTimeout 1"), 0);
+
+// for (let i = 0; i < 2000000000; i++) {}
+
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {"Content-Type": "text/plain"});
+    res.end("Hello world!");
 });
 
-process.nextTick(() => console.log("this is process.nextTick 1"));
-Promise.resolve().then(() => console.log("this is Promise.resolve 1"));
-setTimeout(() => console.log("this is setTimeout 1"), 0);
+const PORT = process.env.PORT || 3000;
 
-for (let i = 0; i < 2000000000; i++) {}
+server.listen(PORT, () => console.log("Server is running on port 3000"));
 
