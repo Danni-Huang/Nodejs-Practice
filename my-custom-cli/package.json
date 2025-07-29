@@ -1,0 +1,19 @@
+{
+  "name": "codevolution-pokedex-412",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "codevolution-pokedex": "index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "inquirer": "^8.2.5",
+    "yargs": "^18.0.0"
+  }
+}
